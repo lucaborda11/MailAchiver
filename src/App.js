@@ -3,6 +3,7 @@ import SearchBar from './components/SearchBar'
 import Divider from './components/Divider';
 import './App.css';
 import Counter from './components/Counter';
+import TopRow from './components/TopRow';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <SearchBar></SearchBar>
         <Counter></Counter>
         <Divider></Divider>
+        <TopRow></TopRow>
         <div className="App-header">
           <img src={logo} alt="logo" />
         </div>
