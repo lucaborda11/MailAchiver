@@ -2,7 +2,7 @@ import logo from './img/logo.png';
 import SearchBar from './components/SearchBar'
 import Divider from './components/Divider';
 import './App.css';
-import React from 'react'
+import React, {ChangeEventHandler} from 'react'
 import Counter from './components/Counter';
 import MailList from './components/MailList';
 
@@ -43,7 +43,7 @@ class App extends React.Component {
   }  
   render(){
     var list = ''
-    if(this.state.data.length == 0){
+    if(this.state.data.length === 0){
       list = <div className="App-header"><img src={logo} alt="logo" /></div>
     } else {
       list = <MailList data={this.state.data} />
@@ -54,8 +54,8 @@ class App extends React.Component {
           <SearchBar></SearchBar>
           <Counter mailCounter={this.state.data.length}></Counter>
           <Divider></Divider>
-          {list}
         </header>
+        {list}
       </div>
     );
   }

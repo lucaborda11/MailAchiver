@@ -27,6 +27,8 @@ export default class MailList extends React.Component {
                         {strTo(mail.to)}
                         return(
                             <Row
+                                id={mail.id}
+                                adj={mail.adj}
                                 from={mail.from}
                                 to={showMail}
                                 toMore={mail.to.length - 2}
