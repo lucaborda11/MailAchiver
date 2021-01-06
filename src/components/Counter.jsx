@@ -1,9 +1,8 @@
 import React from 'react';
 
-var mailCounter = 0
-
 export default class Counter extends React.Component {
     render() {
+        const { mailCounter } = this.props
         return(
             <p className="counterText"> 
                 Results: 
