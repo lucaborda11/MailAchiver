@@ -1,41 +1,35 @@
 import React from 'react'
+import TopRow from './TopRow'
+import Row from './Row'
 
 export default class MailList extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            data:[{
-                "id": 1,
-                "from": "aaa@example.com",
-                "to": "zzz.zzz@example.com",
-                "subject": "[HR-888] Notice of official announcement",
-                "date": "0:20"
-            },{
-                "id": 2,
-                "from": "bbb.bbbb@example.com",
-                "to": "yyy@example.com",
-                "subject": '[web:333] "Web Contact"',
-                "date": "0:10"
-            },{
-                "id": 3,
-                "from": "ccc@example.com",
-                "to": "xxx@example.com",
-                "subject": "Happy New Year! Greetings for the New Year.",
-                "date": "0:0"
-            }]
-        }
-    }
-
     render() {
+        const { data } = this.props
+        var showMail = ''
+
+        function strTo(showTo) {
+            showMail = ''
+            if (showTo.length > 1){
+                showTo.forEach(element => {
+                    showMail += element + ', '
+                });
+                showMail = showMail.substring(0, showMail.length - 2)
+            } else {
+                showMail = showTo[0]
+            }
+        }
+
         return(
             <div>
                 <TopRow />
                 {
-                    this.state.data.map((mail) => {
+                    data.map((mail) => {
+                        {strTo(mail.to)}
                         return(
-                            <Rows
+                            <Row
                                 from={mail.from}
-                                to={mail.to}
+                                to={showMail}
+                                toMore={mail.to.length - 2}
                                 subject={mail.subject}
                                 date={mail.date}
                             />
