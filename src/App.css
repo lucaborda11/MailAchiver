@@ -63,7 +63,7 @@
   font-weight: 600;
   margin-top: 1.2rem;
   margin-bottom: 0.5rem;
-  color: #4a4a4a;
+  color: #7b7a7a;
 }
 
 .counterNumber {
@@ -71,13 +71,31 @@
   margin-right: 1px;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #4a4a4a;
+  color: #717171;
 }
 
 .divider {
   height: 1px;
   background-color: #cfcfcf;
   width: 100%;
+}
+
+.topRow {
+  display: flex;
+  background-color: #eeeded;
+  border: 1px solid #cfcfcf;
+  border-left: none;
+  border-right: none;
+  color: #7b7a7a;
+  justify-content: space-between;
+}
+
+.topRow div{
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: inherit;
+  padding: 0.5rem;
 }
 
 .App-logo {
