@@ -25,6 +25,10 @@
   box-shadow: inset 0 0 2px #d9d9d9;
 }
 
+.react-daterange-picker__wrapper{
+  display: none;
+}
+
 .searchBtn {
   width: 20px;
   color: black;
@@ -34,6 +38,7 @@
   border: 1px solid #cfcfcf;
   border-left: none;
   border-radius: 0 0.5rem 0.5rem 0;
+  outline: none;
 }
 
 .inputContainer .inputHolder {
@@ -44,13 +49,15 @@
   margin: 0;
 }
 
-.inputContainer img{
+.inputContainer .imgCalendar {
   width: 20px;
+  outline: none;
   margin: 0;
 }
 
 .inputContainer .inputHolder input {
   border: none;
+  outline: none;
   text-align: center;
   width: 70px;
   margin: 0;
@@ -103,6 +110,10 @@
   margin: 0;
 }
 
+.topRow div:nth-child(1):hover{
+  cursor: pointer;
+}
+
 .topRow div:nth-child(2){
   width: 25%;
   max-width: 350px;
@@ -118,6 +129,10 @@
   max-width: 95px;
   min-width: 95px;
   margin: 0;
+}
+
+.topRow div:nth-child(4):hover{
+  cursor: pointer;
 }
 
 .rows {

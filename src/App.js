@@ -40,9 +40,10 @@ class App extends React.Component {
           "date": "2019/12/31",
           "adj": false
         }],
-      orderForm:"minus",
-      orderDate:"minus",
-      columnStyle:""
+      orderForm: "minus",
+      orderDate: "minus",
+      columnStyle: "",
+      firstLoad: true
     }
   }
 
@@ -130,7 +131,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <header>
-          <SearchBar></SearchBar>
+          <SearchBar 
+            firstLoad={this.firstLoad}
+          />
           <Counter mailCounter={this.state.data.length}></Counter>
           <Divider></Divider>
         </header>
