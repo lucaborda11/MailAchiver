@@ -126,6 +126,19 @@
   border-bottom: 1px solid #cfcfcf;
 }
 
+.rows:hover > div:not(.notHover){
+  color: blue;
+}
+
+.notHover{
+  font-weight: 600;
+}
+
+.rows:hover {
+  background-color: #eeeded;
+  cursor: pointer;
+}
+
 .rows div {
   font-size: 0.8rem;
   padding: 0.5rem;
