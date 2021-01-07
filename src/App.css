@@ -110,14 +110,13 @@
 }
 
 .topRow div:nth-child(3){
-  width: 55%;
+  width: calc(60% - 70px);
   margin: 0;
 }
 
 .topRow div:nth-child(4){
-  width: 5%;
-  max-width: 70px;
-  min-width: 70px;
+  max-width: 95px;
+  min-width: 95px;
   margin: 0;
 }
 
@@ -143,22 +142,58 @@
 }
 
 .rows div:nth-child(2){
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 25%;
   max-width: 350px;
   margin: 0;
 }
 
+.rows div:nth-child(2) div{
+  padding: 0;
+  max-width: 350px;
+  width: calc(100% - 35px);
+}
+
+.rows div:nth-child(2) .moreNumber{
+  text-align: center;
+  font-size: 0.73rem;
+  font-weight: 800;
+  min-width: 20px;
+  background-color: #9a9a9a;
+  border-radius: 5px;
+  color: white;
+  max-height: fit-content;
+  padding: 1px;
+  height: fit-content;
+}
+
 .rows div:nth-child(3){
-  width: 55%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(60% - 95px);
   margin: 0;
 }
 
+.rows div:nth-child(3) div{
+  padding: 0;
+  max-width: none;
+  width: calc(100% - 35px);
+}
+
+.rows div:nth-child(3) .clipImg{
+  width: 14px;
+}
+
 .rows div:nth-child(4){
-  width: 5%;
-  max-width: 70px;
-  min-width: 70px;
+  max-width: 95px;
+  min-width: 95px;
   margin: 0;
 }
+
+
 
 .App-logo {
   height: 40vmin;

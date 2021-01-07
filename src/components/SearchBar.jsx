@@ -8,7 +8,7 @@ export default class SearchBar extends React.Component {
         return(
             <div className="btnAndInput">
                 <div className="inputContainer">
-                    <img src={calendar} />
+                    <img src={calendar} alt=""/>
                     <div className="inputHolder">
                         <input type="text" value="2020/1/1" id="dateFrom"></input>
                         -
