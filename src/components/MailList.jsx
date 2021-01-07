@@ -4,7 +4,7 @@ import Row from './Row'
 
 export default class MailList extends React.Component {
     render() {
-        const { data } = this.props
+        const { data, sortObject, orderForm, orderDate, columnStyle } = this.props
         var showMail = ''
 
         function strTo(showTo) {
@@ -21,7 +21,11 @@ export default class MailList extends React.Component {
 
         return(
             <div>
-                <TopRow />
+                <TopRow
+                 sortObject={sortObject}
+                 orderForm={orderForm}
+                 orderDate={orderDate} 
+                />
                 {
                     data.map((mail) => {
                         {strTo(mail.to)}
@@ -34,6 +38,7 @@ export default class MailList extends React.Component {
                                 toMore={mail.to.length - 2}
                                 subject={mail.subject}
                                 date={mail.date}
+                                columnStyle={columnStyle}
                             />
                         )
                     })

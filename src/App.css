@@ -115,8 +115,8 @@
 }
 
 .topRow div:nth-child(4){
-  max-width: 70px;
-  min-width: 70px;
+  max-width: 95px;
+  min-width: 95px;
   margin: 0;
 }
 
@@ -173,7 +173,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: calc(60% - 70px);
+  width: calc(60% - 95px);
   margin: 0;
 }
 
@@ -188,8 +188,8 @@
 }
 
 .rows div:nth-child(4){
-  max-width: 70px;
-  min-width: 70px;
+  max-width: 95px;
+  min-width: 95px;
   margin: 0;
 }
 
