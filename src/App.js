@@ -48,7 +48,7 @@ class App extends React.Component {
 
   styleHeaderText = (action, element) => {
     if (element === "byForm"){
-      document.getElementById('dateTopRow').innerHTML = "To"
+      document.getElementById('dateTopRow').innerHTML = "Date"
       document.getElementById('dateTopRow').style = "color: #7b7a7a"
       document.getElementById('fromTopRow').style = "color: rgb(60 60 60)"
         if (action === "minus"){
