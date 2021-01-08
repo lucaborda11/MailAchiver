@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+header {
+  
+}
+
 .App {
   text-align: center;
   margin: 2rem;
@@ -142,6 +146,10 @@
   cursor: pointer;
 }
 
+ul li {
+  list-style: none;
+}
+
 .rows {
   display: flex;
   width: 100%;
@@ -159,6 +167,10 @@
 .rows:hover {
   background-color: #eeeded;
   cursor: pointer;
+}
+
+.rowsMobile {
+  display: none;
 }
 
 .rows div {
@@ -228,15 +240,85 @@
   margin: 0;
 }
 
+.bodyMail {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid #cfcfcf;
+  color: #383838;
+}
+
+.bodyMail div{
+  text-align: right;
+}
+
+.bodyMail .clipImg {
+  text-align: right;
+  width: 18px;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.bodyMail .mailImg {
+  width: 18px;
+}
+
+.bodyMail .arrowImg {
+  margin: 0 auto;
+  width: 20px;
+}
+
+.bodyMail .mailInfo{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.bodyMail .mailInfo img{
+  margin-right: 0.8rem;
+}
+
+.bodyMail .mailInfo div{
+  text-align: left;
+}
+
+.bodyMail span{
+  color: #7b7a7a;
+  font-weight: 300;
+}
+
+.bodyMail .mailInfo .bodyMailFrom {
+  font-size: 0.9rem;
+}
+
+.bodyMail .mailInfo .bodyMailTo{
+  font-size: 0.8rem;
+}
+
+.bodyMail .mailInfo .bodyMailDate {
+  font-size: 0.75rem;
+}
+
+.bodyMail .bodyMailSubject {
+  text-align: left;
+  margin: 1rem;
+  margin-bottom: 0;
+  padding: 0.5rem;
+  border: 1px solid #d9d7d7;
+}
+
+.bodyMail .bodyMailContent {
+  text-align: left;
+  margin: 1rem;
+  margin-top: 0;
+  border: 1px solid #d9d7d7;
+  border-top: none;
+  padding: 1rem 0.5rem;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -250,3 +332,163 @@
   color: white;
 }
 
+
+@media screen and (max-width: 500px) {
+
+  .App{
+    margin: 1rem 0;
+  }
+
+  ul li {
+    border-bottom: 1px solid #cfcfcf;
+  }
+
+  .inputContainer {
+    margin-left: 1rem;
+  }
+
+  .counterText {
+    margin-left: 1rem;
+  }
+
+  .topRow{
+    padding: 0.5rem 0;
+  }
+
+  .topRow div {
+    border-right: 1px solid #717171 ;
+    padding: 0 0.5rem;
+  }
+
+  .topRow div:nth-child(1){
+    margin-left: 0.5rem;
+    width: fit-content;
+  }
+
+  .topRow div:nth-child(2){
+    width: fit-content;    
+  }
+  
+  .topRow div:nth-child(3){
+    width: fit-content;
+    margin: 0;
+  }
+  
+  .topRow div:nth-child(4){
+    min-width: 0;
+    width: fit-content;
+    border: none;
+  }
+
+  .rows {
+    display: none;
+  }
+  
+  .rowsMobile {
+    width: 100%;
+    display: block;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    margin-left: 1rem ;
+    margin-right: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .rowsMobile .imgAndInfo {
+    width: 100%;
+    display: flex;
+    margin-bottom: 0.6rem;
+  }
+
+  .rowsMobile .mobileSubject {
+    font-size: 1rem;
+    max-width: calc(100% - 0.5rem);
+    width: fit-content;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .rowsMobile .fromToContent .toSpam {
+    margin-top: 5px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 1.3rem);
+  }
+
+  .rowsMobile .fromToContent .toSpam .moreNumber{
+    text-align: center;
+    font-size: 0.73rem;
+    font-weight: 800;
+    min-width: 20px;
+    background-color: #9a9a9a;
+    border-radius: 3px;
+    color: white;
+    max-height: fit-content;
+    padding: 1px;
+    height: fit-content;
+  }
+
+  .rowsMobile .fromToContent .toSpam .mobileTo {
+    max-width: calc(100% - 3.5rem);
+    width: fit-content;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .rowsMobile .imgAndInfo .mailMobileImg {
+    width: 12px;
+    margin-right: 0.5rem;
+  }
+
+  .rowsMobile .imgAndInfo .fromToContent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rowsMobile .imgAndInfo .fromToContent .dateFromContent{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .rowsMobile .imgAndInfo .fromToContent .mobileFrom{
+    width: fit-content;
+    max-width: 65%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+  }
+
+  .rowsMobile .imgAndInfo .fromToContent .dateFromContent .dateImgContent {
+    display: flex;
+    width: fit-content;
+  }
+
+  .rowsMobile .imgAndInfo .fromToContent .dateFromContent .dateImgContent .mobileDate{
+    margin: 0 0.5rem;
+  }
+
+  .rowsMobile .imgAndInfo .fromToContent .dateFromContent .dateImgContent .arrowImg{
+    width: 4px;
+  }
+
+  .rowsMobile .imgAndInfo .fromToContent .dateFromContent .dateImgContent .clipImg{
+    width: 12px;
+  }
+
+  .bodyMail {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .bodyMailSubject {
+    font-size: 0.9rem;
+  }
+}
