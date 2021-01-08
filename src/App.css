@@ -41,6 +41,12 @@
   outline: none;
 }
 
+.searchBtn:active{
+  box-shadow: inset 0 0 3px #9e9e9e;
+  color: aliceblue;
+  background-color: #cacaca;
+}
+
 .inputContainer .inputHolder {
   display: flex;
   width: 200px;
@@ -53,6 +59,7 @@
   width: 20px;
   outline: none;
   margin: 0;
+  margin-right: 0.5rem;
 }
 
 .inputContainer .inputHolder input {
@@ -221,8 +228,6 @@
   margin: 0;
 }
 
-
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -245,15 +250,3 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

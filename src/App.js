@@ -9,6 +9,8 @@ import MailList from './components/MailList';
 
 class App extends React.Component {
   constructor(props) {
+    var d = new Date();
+
     super(props)
     this.state = {
       data:[{
@@ -37,12 +39,16 @@ class App extends React.Component {
           "from": "ddd.dddd@example.com",
           "to": ["vvv.vvv@example.com", "uuu@example.com", "qqq.qqq@example.com"],
           "subject": "[HR-887(Revised: Office Expansion Project Team)] Notice of off",
-          "date": "2019/12/31",
+          "date": "2018/12/31",
           "adj": false
         }],
       orderForm: "minus",
       orderDate: "minus",
       columnStyle: "",
+      maxDate: d.getFullYear() + "/" + (d.getMonth()+1)  + "/" + d.getDate(),
+      minDate: d.getFullYear() + "/" + (d.getMonth()+1)  + "/" + d.getDate(),
+      noMails: false,
+      countMails: 0,
       firstLoad: true
     }
   }
@@ -114,10 +120,40 @@ class App extends React.Component {
     }
     this.styleHeaderText(action, element)
   }
+
+  noMailsFound =()=>{
+    this.setState({
+      noMails: true,
+      countMails: 0
+    })
+  }
+
+  countMailsFound =(countMails)=>{
+    if(countMails !== this.state.countMails){
+      this.setState({
+      countMails: countMails
+      })
+    }
+  }
+  
+  minMaxDateUpdate =(minDate, maxDate)=>{
+    var cont = 0; 
+    this.state.data.forEach((arr)=>{
+      if(arr.date.replaceAll('/','') <= maxDate.replaceAll('/','') && arr.date.replaceAll('/','') >= minDate.replaceAll('/','')){
+        cont += 1
+      }
+    })
+
+    this.setState({
+      countMails: cont,
+      maxDate: maxDate,
+      minDate: minDate
+    })
+  }
   
   render(){
     var list = ''
-    if(this.state.data.length === 0){
+    if(this.state.countMails === 0){
       list = <div className="App-header"><img src={logo} alt="logo" /></div>
     } else {
       list = <MailList 
@@ -125,16 +161,21 @@ class App extends React.Component {
         sortObject={this.sortObject}
         orderDate={this.state.orderDate}
         orderForm={this.state.orderForm}
+        maxDate={this.state.maxDate}
+        minDate={this.state.minDate}
         columnStyle={this.state.columnStyle}
+        noMailsFound={this.noMailsFound}
+        countMailsFound={this.countMailsFound}
+        countMails={this.state.countMails}
       />
     }
     return (
       <div className="App">
         <header>
           <SearchBar 
-            firstLoad={this.firstLoad}
+            minMaxDateUpdate={this.minMaxDateUpdate}
           />
-          <Counter mailCounter={this.state.data.length}></Counter>
+          <Counter mailCounter={this.state.countMails}></Counter>
           <Divider></Divider>
         </header>
         {list}
