@@ -6,14 +6,25 @@ import DateRangePicker from '../../node_modules/@wojtekmaj/react-daterange-picke
 export default class SearchBar extends React.Component {
     constructor(props){
         var d = new Date();
+        var dDay = ''
+        var dMonth = ''
+        if (d.getDate() < 10) {
+            dDay = '0' + d.getDate()
+        } else {
+            dDay = d.getDate()
+        }
 
+        if ((d.getMonth()+1) < 10) {
+            dMonth = '0' + (d.getMonth()+1)
+        } else {
+            dMonth = (d.getMonth()+1)
+        }
         super(props)
         this.state = {
             renderCalendar:false,
-            nowDateFrom: d.getFullYear() + "/" + (d.getMonth()+1)  + "/" + d.getDate(),
-            nowDateTo: d.getFullYear() + "/" + (d.getMonth()+1)  + "/" + d.getDate(),
+            nowDateFrom: d.getFullYear() + "/" + dMonth  + "/" + dDay,
+            nowDateTo: d.getFullYear() + "/" + dMonth  + "/" + dDay,
         }
-        
     }
     
     
@@ -30,19 +41,51 @@ export default class SearchBar extends React.Component {
     }
 
     onChangeDates = (dates) => {
-        debugger
         var arrDate = dates.toString().split(",")
         var sd = new Date (arrDate[0])
         var ed = new Date (arrDate[1])
+        var sdMonth = ''
+        var sdDay = ''
+        var edMonth = ''
+        var edDay = ''
 
-        var startDate = + sd.getFullYear() + "/" + (sd.getMonth()+1)  + "/" + sd.getDate() 
-        var endDate = + ed.getFullYear() + "" + (ed.getMonth()+1)  + "/" + ed.getDate() 
+        if (sd.getDate() < 10) {
+            sdDay = '0' + sd.getDate()
+        } else {
+            sdDay = sd.getDate()
+        }
 
-        document.getElementById('dateFrom').value = startDate
-        document.getElementById('dateTo').value = endDate
+        if (ed.getDate() < 10) {
+            edDay = '0' + ed.getDate()
+        } else {
+            edDay = ed.getDate()
+        }
+
+        if ((sd.getMonth()+1) < 10) {
+            sdMonth = '0' + (sd.getMonth()+1)
+        } else {
+            sdMonth = (sd.getMonth()+1)
+        }
+
+        if ((ed.getMonth()+1) < 10) {
+            edMonth = '0' + (ed.getMonth()+1)
+        } else {
+            edMonth = (ed.getMonth()+1)
+        }
+
+        var startDate = + sd.getFullYear() + "/" + sdMonth  + "/" + sdDay
+        var endDate = + ed.getFullYear() + "/" + edMonth  + "/" + edDay
+
+        this.setState({
+            nowDateFrom: startDate,
+            nowDateTo: endDate,
+        })
+
     }
     
     render(){
+        const { minMaxDateUpdate } = this.props        
+
         var calendar 
         if(this.state.renderCalendar === false){
             calendar = <div></div>
@@ -62,7 +105,7 @@ export default class SearchBar extends React.Component {
                         <input type="text" value={this.state.nowDateTo} id="dateTo" disabled></input>
                     </div>
                 </div>
-                <input type="image" alt="Search" className="searchBtn" id="searchButton" src={search}></input> 
+                <input type="image" alt="Search" className="searchBtn" id="searchButton" src={search} onClick={()=>{        minMaxDateUpdate(this.state.nowDateFrom, this.state.nowDateTo)}} ></input> 
             </div>
 
         )
