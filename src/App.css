@@ -3,13 +3,18 @@
   padding: 0;
 }
 
-header {
-  
+body {
+  height: calc(100vh - 4rem);
 }
 
 .App {
   text-align: center;
+  height: calc(100vh - 4rem);
   margin: 2rem;
+}
+
+.App-header {
+  height: 800px;
 }
 
 .btnAndInput{
@@ -323,9 +328,10 @@ ul li {
 
 .App-header {
   background-color: transparent;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 200px);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -333,7 +339,7 @@ ul li {
 }
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 420px) {
 
   .App{
     margin: 1rem 0;
@@ -395,6 +401,7 @@ ul li {
     margin-left: 1rem ;
     margin-right: 1rem;
     font-size: 0.85rem;
+    max-width: 414px;
   }
 
   .rowsMobile .imgAndInfo {
@@ -405,11 +412,16 @@ ul li {
 
   .rowsMobile .mobileSubject {
     font-size: 1rem;
-    max-width: calc(100% - 0.5rem);
+    max-width: calc(100% - 2rem);
     width: fit-content;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .rowsMobile .fromToContent {
+    max-width: 370px;
+    width: 330px;
   }
 
   .rowsMobile .fromToContent .toSpam {
@@ -486,9 +498,28 @@ ul li {
   .bodyMail {
     margin-left: 1rem;
     margin-right: 1rem;
+    max-width: 385px;
   }
 
   .bodyMailSubject {
     font-size: 0.9rem;
   }
+}
+
+@media screen and (max-width: 380px) {
+  .rowsMobile {
+    max-width: 375px;
+  }
+
+  .rowsMobile .fromToContent {
+    max-width: 330px;
+    width: 330px;
+  }
+
+  .bodyMail {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    max-width: 345px;
+  }
+
 }

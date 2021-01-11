@@ -19,7 +19,7 @@ class App extends React.Component {
           "to": ["zzz.zzz@example.com"],
           "subject": "[HR-888] Notice of official announcement",
           "content":"<h3 style='color: #7775c5'>Hi this is a Test Content Mail</h3><br></br><article style='font-size: 0.8rem;'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta debitis assumenda omnis id rerum accusamus natus <b>perspiciatis</b> odio quae earum odit dignissimos ea explicabo, voluptatem obcaecati vitae repellat quam illum.</p></article>",
-          "date": "2020/01/02",
+          "date": "2021/01/10",
           "adj": false
         },{
           "id": 2,
@@ -27,7 +27,7 @@ class App extends React.Component {
           "to": ["yyy@example.com"],
           "subject": '[web:333] "Web Contact"',
           "content":"<h3 style='color: #7775c5'>Hi this is a Test Content Mail</h3><br></br><article style='font-size: 0.8rem;'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta debitis assumenda omnis id rerum accusamus natus <b>perspiciatis</b> odio quae earum odit dignissimos ea explicabo, voluptatem obcaecati vitae repellat quam illum.</p></article>",
-          "date": "2020/01/01",
+          "date": "2021/01/05",
           "adj": false
         },{
           "id": 3,
@@ -35,7 +35,7 @@ class App extends React.Component {
           "to": ["xxx@example.com", "www.www@example.com"],
           "subject": "Happy New Year! Greetings for the New Year.",
           "content":"<h3 style='color: #7775c5'>Hi this is a Test Content Mail</h3><br></br><article style='font-size: 0.8rem;'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta debitis assumenda omnis id rerum accusamus natus <b>perspiciatis</b> odio quae earum odit dignissimos ea explicabo, voluptatem obcaecati vitae repellat quam illum.</p></article>",
-          "date": "2019/12/31",
+          "date": "2020/12/31",
           "adj": true
         },{
           "id": 4,
@@ -43,7 +43,7 @@ class App extends React.Component {
           "to": ["vvv.vvv@example.com", "uuu@example.com", "qqq.qqq@example.com"],
           "subject": "[HR-887(Revised: Office Expansion Project Team)] Notice of off",
           "content":"<h3 style='color: #7775c5'>Hi this is a Test Content Mail</h3><br></br><article style='font-size: 0.8rem;'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta debitis assumenda omnis id rerum accusamus natus <b>perspiciatis</b> odio quae earum odit dignissimos ea explicabo, voluptatem obcaecati vitae repellat quam illum.</p></article>",
-          "date": "2018/12/31",
+          "date": "2019/12/31",
           "adj": false
         }],
       orderForm: "minus",
